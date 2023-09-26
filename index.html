@@ -8,6 +8,15 @@
   </head>
   <body>
     <div id="app"></div>
+    <lp-provider lp-data="eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiIxIiwiY3VycmVuY3kiOiJVQUgiLCJkZXNjcmlwdGlvbiI6InRlc3QiLCJvcmRlcl9pZCI6InRlc3QtcG9zdGVyLTI2LTA5LTIwMjMiLCJwdWJsaWNfa2V5IjoiaTE3MTIzMDY4ODE0In0=" lp-signature="XHUAzD8m0Js06n5vBVvjuqUbe+U=">
+      <lp-apple-pay mode="black"></lp-apple-pay>
+  </lp-provider>
+  <script>
+      const provider = document.querySelector('lp-provider');
+      provider.addEventListener('onpaymentsuccess', (customEvent) => { console.log(customEvent); }); // колбек для обработки успешного платежа
+      provider.addEventListener('onpaymenterror', (customEvent) => { console.log(customEvent); }); // колбек для обработки ошибки
+  </script>
+    <script type="text/javascript" src="https://static.liqpay.ua/elements/customElements.js"></script>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
